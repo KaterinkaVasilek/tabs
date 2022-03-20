@@ -1,0 +1,51 @@
+.bookmarks {
+    margin-top: 30px;
+    min-height: 530px;
+    &__label {
+        margin-right: 30px;
+        cursor: pointer;
+        position: relative;
+        padding: 19px 0 19px 0;
+        margin-left: 30px;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    &__radio {
+        appearance: none;
+        position: absolute;
+    }
+    &__content {
+        display: none;
+    }
+}
+
+.controls {
+    border-bottom: 2px solid $gray_3;
+    padding: 19px 30px;
+}
+
+#all:checked~.controls label[for="all"], #people:checked~.controls label[for="people"], #events:checked~.controls label[for="events"] {
+    font-weight: 600;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-radius: 4px;
+        border-bottom: 2px solid #51A2F2;
+    }
+}
+
+#all:checked~.content .bookmarks__content:nth-child(1) {
+    display: block;
+}
+    
+#people:checked~.content .bookmarks__content:nth-child(2) {
+    display: block;
+}
+    
+#events:checked~.content .bookmarks__content:nth-child(3) {
+    display: block;
+}

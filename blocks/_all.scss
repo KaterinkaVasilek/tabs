@@ -1,0 +1,9 @@
+.all {
+    display: flex;
+    flex-direction: column;
+    &__header {
+        @include headerText();
+    }
+}
+
+

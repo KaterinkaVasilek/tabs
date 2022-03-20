@@ -1,0 +1,94 @@
+@import 'blocks/variables';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: 'Nunito', sans-serif;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+article > * + * {
+    margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 980px;
+}
+
+.block__style {
+    box-shadow: 0px 1px 4px rgba(27, 80, 115, 0.13);
+    border-radius: $br9;
+}
+.content {
+    padding: 30px;
+    position: relative;
+    min-height: 475px;
+}
+
+.people {
+    @include people();
+}
+.bookmark__delete{
+    @include bookmarkDelete();
+}
+@include eventsStyles ();
+
+@import 'blocks/bookmarks';
+@import 'blocks/all';
+@import 'blocks/events';
+@import 'blocks/people';

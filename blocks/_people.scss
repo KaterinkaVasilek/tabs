@@ -1,0 +1,100 @@
+.people__item {
+    width: 100%;
+    transition: .3s;
+}
+
+.delete__user{
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    right: 20px;
+    top: 0;
+    border: none;
+    cursor: pointer;
+    background: $gray_0;
+    border-radius: 50%;
+    transition: .3s;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    & img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+    }
+    &:focus{
+        outline: 1px solid $blue;
+    }
+}
+.additional__block{
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    z-index: 5;
+    bottom: 30px;
+    display: flex;
+    transition: .3s;
+    align-items: center;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.actions{
+    margin-right: 10px;
+    position: relative;
+    padding: 10px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    &:last-child{
+        margin-right: 0;
+    }
+    &:focus{
+        outline: 1px solid $blue;
+    }
+}
+.message{
+    background: $blue;
+    &:hover{
+        background: #468ed6;
+    }
+}
+.append{
+    background: linear-gradient(68.42deg, #50F2C4 0%, #26D0E3 39.67%, #757AFF 100%);
+    &:hover{
+        background: linear-gradient(68.42deg, #757AFF 0%, #26D0E3 39.67%, #50F2C4 100%);
+    }
+}

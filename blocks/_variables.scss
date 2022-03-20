@@ -1,0 +1,198 @@
+$white: #FFFFFF;
+$blue: #51A2F2;
+$yellow: #FFE55C;
+$red: #FF2442;
+$green: #16D384;
+$light_blue: #F9FBFC;
+$black: #222222;
+$gray_0: #707070;
+$gray_1: #FAFAFA;
+$gray_2: #DBDBDB;
+$gray_3: #EAEAEA;
+$input_focus:rgba(81, 162, 242, 0.8);
+$input_default: #D4E8FC;
+
+$box_sh_popups: 0px 0px 26px rgba(81, 81, 81, 0.15);
+$box_sh_container: 0px 1px 4px rgba(27, 80, 115, 0.13);
+$br16: 16px;
+$br9: 9px;
+$input_focus: 0px 0px 5px 1px rgba(81, 162, 242, 0.35);
+$input_red: 0px 0px 5px 1px rgba(255, 36, 66, 0.35);
+$input_green: 0px 0px 5px 1px rgba(22, 211, 132, 0.35);
+$btn_blue_hover: 0px 0px 7px 1px rgba(81, 162, 242, 0.8); 
+$btn_green_focus: 0px 0px 7px 1px rgba(81, 203, 242, 0.8);
+$btn_yellow_default: 0px 6px 14px rgba(255, 229, 92, 0.56);;
+$btn_yellow_hover: 0px 4px 11px rgba(255, 229, 92, 0.56);
+
+@mixin headerText () {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: $black;
+}
+
+@mixin people () {
+        &__content {
+            display: grid;
+            grid-gap: 30px;
+            justify-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+        }
+        &__header {
+            @include headerText();
+        }
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &__item {
+            width: 160px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+        }
+        &__image {
+            position: relative;
+            max-width: 160px;
+            width: 100%;
+            &:hover {
+                & .additional__block {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+        &__img {
+            margin-bottom: 10px;
+            max-width: 160px;
+            width: 100%;
+            position: relative;
+        }
+        &__text {
+            overflow-wrap: break-word;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+            color: $black;
+            max-width: 160px;
+            -webkit-line-clamp: 1;
+            display: -webkit-box; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        &__param {
+            display: flex;
+        }
+        &__online {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            margin-top: 131px;
+            margin-left: 131px;
+            background-color: $green;
+            border-radius: 50%;
+            border: 2px solid $white;
+        }
+}
+
+@mixin bookmarkDelete () {
+    &:hover{
+        .delete__user, 
+        .delete__event{
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(5px);
+            -webkit-transform: translateY(5px);
+            -moz-transform: translateY(5px);
+            -ms-transform: translateY(5px);
+            -o-transform: translateY(5px);
+        }
+    }
+}
+
+@mixin eventsStyles () {
+    .flex{
+        display: flex;
+        align-items: center;
+    }
+    
+    .grid {
+        display: grid;
+        grid-gap: 30px;
+        justify-self: center;
+        &__events {
+            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+        }
+    }
+    .tikets__price {
+        &-text{
+            color: $white;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 15px;
+        }
+    }
+    .text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        word-break: break-word;
+    }
+    
+    .events__card {
+        max-width: 160px;
+        width: 100%;
+        &-image{
+            margin-bottom: 10px;
+            position: relative;
+        }
+    }
+    .events {
+        &__content {
+            pointer-events: none;
+            position: absolute;
+            padding: 10px;
+            bottom: 0;
+            z-index: 3;
+            right: 0;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start !important;
+            &-link {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                & p {
+                    margin: 0;
+                    -webkit-line-clamp: 3;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+            &-top {
+                width: 100%;
+                justify-content: space-between;
+            }
+            &-text {
+                color: $black;
+                overflow-wrap: break-word;
+                align-self: center;
+            }
+        }
+        &__users span {
+            color: $white;
+        }
+        &__users-img {
+            margin-right: 5px;
+        }
+    }
+}
